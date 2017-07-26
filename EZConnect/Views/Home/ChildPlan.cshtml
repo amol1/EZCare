@@ -1,0 +1,52 @@
+﻿<div class="jumbotron">
+    <h2>EZConnect</h2>
+    <p class="lead">EZConnect is a tool that helps to connect with services, vendors and parents to help your child with special needs.</p>
+</div>
+<br /><br />
+<div class="row">
+    <div class="col-md-12" ng-controller="ChildController" ng-init="fetchChild()">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="/{{Name}}.png" style="margin:auto; width:150px;display:block" />
+            </div>
+            <div class="col-md-8">
+                <h4>{{Name}}</h4>
+                <p>Age: {{Age}}</p>
+                <p>Condition: {{Condition}}</p>
+            </div>
+            <br /><br />
+        </div>
+
+        <h4>Upcoming Appointments</h4>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Time</td>
+                    <td>Provider Name</td>
+                    <td>Address</td>
+                    <td>Specialty</td>
+                    <td>Rating</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="appointment in Appointments">
+                    <td>{{appointment.appointmentTime}}</td>
+                    <td>{{appointment.provider.name}}</td>
+                    <td>{{appointment.provider.address}}</td>
+                    <td>{{appointment.provider.specialty}}</td>
+                    <td>{{appointment.provider.rating}}</td>
+                </tr>
+            </tbody>
+            <!--<div class="row" ng-repeat="appointment in Appointments">
+                {{appointment}}
+            </div>-->
+        </table>
+    </div>
+</div>
+<br /><br />
+
+@section scripts {
+    @Scripts.Render( "~/Scripts/angular.js" )
+    @Scripts.Render( "~/Scripts/app/app.js" )
+    @Scripts.Render( "~/Scripts/app/child-controller.js" )
+}

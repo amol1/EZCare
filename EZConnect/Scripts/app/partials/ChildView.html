@@ -1,0 +1,24 @@
+﻿<br /><br />
+<div class="row">
+    <div class="col-md-12" ng-controller="ChildController" ng-init="fetchChild()">
+        <div class="row" ng-repeat="child in Children">
+            <div class="col-md-4">
+                <img src="/{{child.name}}.png" style="margin:auto; width:150px;display:block" />
+            </div>
+            <div class="col-md-8">
+                <h4>{{child.name}}</h4>
+                <p>Age: {{child.age}}</p>
+                <p>Condition: {{child.condition}}</p>
+            </div>
+            <br /><br />
+        </div>
+    </div>
+</div>
+<br /><br />
+<div class="row">
+    <div class="col-md-12">
+        <h4>Forums</h4>
+        <p><a href="">Forum post 1 related to Arthritis, because Sally has this condition.</a></p>
+        <p><a href="">Forum post 2 related to Physical therapy, because Sally sees provider of this type.</a></p>
+    </div>
+</div>
